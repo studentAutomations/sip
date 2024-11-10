@@ -18,7 +18,7 @@
 
 
  Чет, 7. Нов, 2024. у 9:08 
-Пријаве за нови "Student Innovative Mobiity Challenge"
+Пријаве за нови "Student Innovative Mobility Challenge"
 Пријаве су до 25. новембра 2024.године
 Опширније 
 
