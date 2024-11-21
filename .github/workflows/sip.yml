@@ -23,7 +23,7 @@ jobs:
 
       - name: Main py
         run: python main.py
-        run: python createpicture.py
+        run: python takepicture.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
