@@ -1,6 +1,6 @@
 name: sip scraper
 
-on: [workflow dispatch]
+on: [workflow dispetch]
 
 
 jobs:
@@ -22,8 +22,7 @@ jobs:
           pip install -r requirements.txt
 
       - name: Main py
-        run: python main.py
-        run: python takepicture.py
+        run: python main.py takepicture.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
