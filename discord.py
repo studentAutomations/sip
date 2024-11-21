@@ -11,10 +11,15 @@ embed = Embed(
 )
 
 image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
+image2 = '1.png'
+
 
 embed.set_author(name='Studentski Informacioni Portal')
 embed.add_field(name='Nova obaveštenja', value='https://sip.elfak.ni.ac.rs/')
 embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
+
+with open(image2, 'rb') as f:
+    webhook.add_file(file=f.read(), filename='1.png')
 
 hook.send(embed=embed)
