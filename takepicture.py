@@ -22,6 +22,8 @@ try:
     # Navigate to the page and perform login actions
     page_to_scrape.get("https://sip.elfak.ni.ac.rs/")
 
+
+    time.sleep(5)
     responseT = page_to_scrape.find_element(By.ID, "novosti")
     responseT.screenshot('1.png')
    
