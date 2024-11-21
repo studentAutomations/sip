@@ -22,7 +22,10 @@ jobs:
           pip install -r requirements.txt
 
       - name: Main py
-        run: python main.py takepicture.py
+        run: python main.py 
+        
+      - name: run picture
+        run: python takepicture.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
