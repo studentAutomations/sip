@@ -1,8 +1,6 @@
 name: sip scraper
 
-on:
-  schedule:
-    - cron: '*/1 * * * *'
+on: [workflow dispatch]
 
 
 jobs:
@@ -25,6 +23,7 @@ jobs:
 
       - name: Main py
         run: python main.py
+        run: python createpicture.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
