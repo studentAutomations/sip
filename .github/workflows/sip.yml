@@ -1,6 +1,6 @@
 name: sip scraper
 
-on: [workflow dispetch]
+on: [workflow_dispatch]
 
 
 jobs:
