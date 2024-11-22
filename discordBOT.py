@@ -1,3 +1,4 @@
+import requests
 import os
 from dhooks import Webhook, Embed
 
@@ -22,5 +23,5 @@ embed.set_thumbnail(image1)
 hook.send(embed=embed)
 
 
-with open(image2, "rb") as f:
-    webhook.send(file=f)
+response = requests.get('https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png')
+webhook.send(file=response.content)
