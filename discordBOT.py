@@ -1,21 +1,22 @@
-import requests
 import os
-from dhooks import Webhook
+from dhooks import Webhook, Embed
 
 # Get the webhook URL from environment variable
 WEBHOOK_URL = os.getenv('WEBHOOK_URL')
-hook = Webhook(WEBHOOK_URL)
+hook = Webhook(WEBHOOK_URL) 
 
-# Image URL (make sure this is accessible)
-image_url = 'https://github.com/studentAutomations/sip/raw/main/sip-nova-obavestenja.png'
+embed = Embed(
+    color=0xFF4545,
+    timestamp='now'
+)
 
-# Fetch the image
-response = requests.get(image_url)
+image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
+image2 = 'https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png'
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Send the image directly from bytes
-    hook.send(file=response.content)  # Send the image without filename
-    print("Image sent successfully!")
-else:
-    print(f"Failed to retrieve image. Status code: {response.status_code}")
+embed.set_author(name='Nova obavestenja na SIP-u')
+embed.add_field(name='Idi na sajt - ', value='https://sip.elfak.ni.ac.rs/')
+embed.add_field(name='Vidi obavestenja - ', value=image2)
+embed.set_footer(text='Elektronski Fakultet')
+embed.set_thumbnail(image1)
+
+hook.send(embed=embed)
