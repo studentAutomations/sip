@@ -1,6 +1,8 @@
-name: sip scraper
+name: cs baze scraper
 
-on: [workflow_dispatch]
+on:
+  schedule:
+    - cron: '*/1 * * * *'
 
 jobs:
   build:
@@ -19,8 +21,6 @@ jobs:
         run: |
           python -m pip install --upgrade pip
           pip install -r requirements.txt
-          pip install discord.py
-
 
       - name: Install Chromium and ChromeDriver
         run: |
@@ -36,13 +36,17 @@ jobs:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
 
+      - name: Take photo
+        run: python takepicture.py
+
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
         with:
           commit_message: Update novosti.md
         id: auto-commit-action
 
-      - name: Take photo
+      - name: Discord bot notification
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
-        run: python takepicture.py 
-            python discordbot.py
+        env:
+          WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
+        run: python discordbot.py
