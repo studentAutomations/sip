@@ -35,7 +35,7 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Delete photo
-        run: python remove.py
+        run: python removephoto.py
 
       - name: Take photo
         run: python takephoto.py
