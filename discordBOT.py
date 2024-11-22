@@ -12,8 +12,5 @@ image_url = 'https://github.com/studentAutomations/sip/raw/main/sip-nova-obavest
 # Fetch the image
 response = requests.get(image_url)
 
-# Check if the request was successful
-if response.status_code == 200:
-    # Send the image directly from bytes
-    hook.send(file=response.content, filename='image.png')  # Specify a filename for the image
+ hook.send(file=response.content)
 
