@@ -23,7 +23,7 @@ try:
     page_to_scrape.get("https://sip.elfak.ni.ac.rs/")
 
 
-    time.sleep(5)
+    time.sleep(30)
     responseT = page_to_scrape.find_element(By.ID, "novosti")
     responseT.screenshot('sip-nova-obavestenja.png')
    
