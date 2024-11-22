@@ -1,29 +1,24 @@
+
 import os
+from dhooks import Webhook, Embed
 import discord
 from discord import Webhook
 
+
 # Get the webhook URL from environment variable
-WEBHOOK_URL = os.getenv('WEBHOOK_URL')  # Ensure this environment variable is set
+WEBHOOK_URL = os.getenv('WEBHOOK_URL')
+hook = Webhook(WEBHOOK_URL) 
 
-# Create a webhook object
-webhook = Webhook.from_url(WEBHOOK_URL, adapter=RequestsWebhookAdapter())
-
-# Create an embed object for the webhook
-embed = discord.Embed(
+embed = Embed(
     color=0xFF4545,
     timestamp='now'
 )
 
-# Define your images
 image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
-image2 = '1.png'  # Path to the local image file you want to send
 
-# Set up the embed fields and attributes
-embed.set_author(name='Studentski Informacioni Portal')
-embed.add_field(name='Nova obaveštenja', value='https://sip.elfak.ni.ac.rs/')
+embed.set_author(name='Computer Science')
+embed.add_field(name='Nova obaveštenja', value='https://cs.elfak.ni.ac.rs/nastava/')
 embed.set_footer(text='Elektronski Fakultet')
-embed.set_thumbnail(url=image1)
+embed.set_thumbnail(image1)
 
-# Send the embed along with the image file
-with open(image2, 'rb') as f:  # Open the image file in binary mode
-    webhook.send(embed=embed, file=discord.File(f, filename='1.png'))  # Attach the local image file
+hook.send(embed=embed, file=discord.File(f, filename='1.png')
