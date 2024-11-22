@@ -42,8 +42,12 @@ jobs:
           commit_message: Update novosti.md
         id: auto-commit-action
 
+      - name: Take photo
+        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        run: python takepicture.py
+
       - name: Discord bot notification
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: python takepicture.py & discordbot.py
+        run: python discordbot.py
