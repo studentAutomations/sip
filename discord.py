@@ -15,9 +15,8 @@ image2 = '1.png'
 
 embed.set_author(name='Studentski Informacioni Portal')
 embed.add_field(name='Nova obaveštenja', value='https://sip.elfak.ni.ac.rs/')
-embed.set_image(url=image2)
 embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
 
-hook.send(embed=embed)
+hook.send(embed=embed, file=image2)
