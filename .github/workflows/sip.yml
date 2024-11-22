@@ -39,6 +39,8 @@ jobs:
           PASSWORD: ${{ secrets.PASSWORD }}
 
       - name: Delete photo
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.YOUR_GITHUB_ACCESS_TOKEN }}
         run: python removephoto.py
 
       - name: Take photo
