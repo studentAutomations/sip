@@ -1,4 +1,4 @@
-name: cs baze scraper
+name: sip scraper
 
 on: [workflow_dispatch]
 
@@ -29,9 +29,6 @@ jobs:
         run: echo "CHROME_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
 
       - name: Run main script
-        env:
-          MAIL: ${{ secrets.MAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: python main.py
 
       - name: Delete photo
