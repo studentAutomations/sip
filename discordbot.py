@@ -1,9 +1,5 @@
-
 import os
 from dhooks import Webhook, Embed
-import discord
-from discord import Webhook
-
 
 # Get the webhook URL from environment variable
 WEBHOOK_URL = os.getenv('WEBHOOK_URL')
@@ -15,10 +11,12 @@ embed = Embed(
 )
 
 image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
+image2 = '1.png'
 
 embed.set_author(name='Computer Science')
 embed.add_field(name='Nova obaveštenja', value='https://cs.elfak.ni.ac.rs/nastava/')
+embed.add_field(name='==>', value=image2)
 embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
-hook.send(embed=embed, file=discord.File(f, filename='1.png'))
+hook.send(embed=embed)
