@@ -3,7 +3,7 @@ from github import Github
 # Replace with your GitHub access token
 access_token = 'YOUR_GITHUB_ACCESS_TOKEN'
 repo_name = 'studentAutomations/sip'  # Your repository name
-file_path = '1.png'  # Path of the file in the repo
+file_path = 'sip-nova-obavestenja.png'  # Path of the file in the repo
 
 # Authenticate with GitHub
 g = Github(access_token)
