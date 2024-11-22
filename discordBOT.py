@@ -20,3 +20,7 @@ embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
 hook.send(embed=embed)
+
+
+with open(image2, "rb") as f:
+    webhook.send(file=f)
