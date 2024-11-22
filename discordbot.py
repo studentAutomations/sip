@@ -21,4 +21,4 @@ embed.add_field(name='Nova obaveštenja', value='https://cs.elfak.ni.ac.rs/nasta
 embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
-hook.send(embed=embed, file=discord.File(f, filename='1.png')
+hook.send(embed=embed, file=discord.File(f, filename='1.png'))
