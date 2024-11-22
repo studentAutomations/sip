@@ -46,4 +46,5 @@ jobs:
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: python takepicture.py discordbot.py
+        run: python takepicture.py
+        run: python discordbot.py
