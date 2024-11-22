@@ -15,7 +15,7 @@ image2 = 'https://github.com/studentAutomations/sip/blob/main/sip-nova-obavesten
 
 embed.set_author(name='Computer Science')
 embed.add_field(name='Nova obaveštenja', value='https://cs.elfak.ni.ac.rs/nastava/')
-embed.add_field(name='=Screenshot novih obavestenja ==>', value=image2)
+embed.add_field(name='Photo ==>', value=image2)
 embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
