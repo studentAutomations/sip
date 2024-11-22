@@ -1,6 +1,6 @@
 import os
 import discord
-from discord import Webhook, RequestsWebhookAdapter
+from discord import Webhook
 
 # Get the webhook URL from environment variable
 WEBHOOK_URL = os.getenv('WEBHOOK_URL')  # Ensure this environment variable is set
