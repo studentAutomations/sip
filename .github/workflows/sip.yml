@@ -34,8 +34,11 @@ jobs:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
 
+      - name: Delete photo
+        run: python remove.py
+
       - name: Take photo
-        run: python takepicture.py
+        run: python takephoto.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
