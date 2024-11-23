@@ -30,17 +30,15 @@ jobs:
       - name: Set up environment variables
         run: echo "CHROME_BIN=/usr/bin/chromium-browser" >> $GITHUB_ENV
 
+
+      - name: Delete photo
+        run: python removephoto.py
+
       - name: Run main script
         env:
           MAIL: ${{ secrets.MAIL }}
           PASSWORD: ${{ secrets.PASSWORD }}
         run: python main.py
-
-      - name: Delete photo
-        run: python removephoto.py
-
-      - name: Take photo
-        run: python takephoto.py
 
       - name: Commit changes
         uses: stefanzweifel/git-auto-commit-action@v4
