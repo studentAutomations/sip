@@ -40,9 +40,6 @@ jobs:
         run: python removephoto.py
 
       - name: Take photo
-        env:
-          MAIL: ${{ secrets.MAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: python takephoto.py
 
       - name: Commit changes
