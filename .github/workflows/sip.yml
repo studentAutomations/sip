@@ -1,4 +1,4 @@
-name: cs lp scraper
+name: sip scraper
 
 on: [workflow_dispatch]
 
