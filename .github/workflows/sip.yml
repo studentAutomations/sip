@@ -37,8 +37,12 @@ jobs:
           commit_message: Update novosti.md
         id: auto-commit-action
 
+      - name: Check if changes were detected
+        id: check_changes
+        run: echo "changes_detected=${{ steps.auto-commit-action.outputs.changes_detected }}" >> $GITHUB_ENV
+
       - name: Discord bot notification
-        if: steps.auto-commit-action.outputs.changes_detected == 'true'
+        if: env.changes_detected == 'true'
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
         run: |
