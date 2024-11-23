@@ -41,7 +41,8 @@ jobs:
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         env:
           WEBHOOK_URL: ${{ secrets.WEBHOOK_URL }}
-        run: python removephoto.py
-             python takephoto.py
-             python discordBOT.py
+        run: |
+          python removephoto.py
+          python takephoto.py
+          python discordBOT.py
       
