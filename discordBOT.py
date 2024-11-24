@@ -1,44 +1,27 @@
-import json
-import requests
 import os
 from dhooks import Webhook, Embed
 
 # Get the webhook URL from environment variable
-WEBHOOK_URL = os.getenv('WEBHOOK_MAIN')
-hook = Webhook(WEBHOOK_URL) 
-
-embed = Embed(
-    color= 0x499957,
-    timestamp='now'
-)
-
-hook.send('@everyone Nova obavestenja na SIP-u!')
-
-image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
-image2 = 'https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png'
+WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
 
 
-embed.add_field(name='Idi na sajt - ', value='https://sip.elfak.ni.ac.rs/')
-embed.add_field(name='Vidi obavestenja - ', value=image2)
-embed.set_footer(text='Elektronski Fakultet')
-embed.set_thumbnail(image1)
+for url in WEBHOOK_URL:
+    hook = Webhook(url) 
 
-hook.send(embed=embed)
+    embed = Embed(
+        color= 0x499957,
+        timestamp='now'
+    )
 
-embed = {
-        "embeds": [{
-            "title": "Image Name",
-            "description": "Image Description",
-            "image": {
-                "url": "attachment:https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png"  # Use the filename here
-            }
-        }]
-    }
+    hook.send('@everyone Nova obavestenja na SIP-u!')
 
-    # Prepare the files to be sent
-    files = {
-        'file': (image_path, open(image_path, 'rb'), 'image/png')  # Adjust MIME type if needed
-    }
+    image1 = 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQOmPtpzziqcXbG795QYLmYvJl6G6CcyKbKHA&s'
+    image2 = 'https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png'
 
-    # Send the request
-    response = requests.post(url, data={'payload_json': json.dumps(embed)}, files=files)
+
+    embed.add_field(name='Idi na sajt - ', value='https://cs.elfak.ni.ac.rs/nastava/')
+    embed.add_field(name='Vidi obavestenja - ', value=image2)
+    embed.set_footer(text='Elektronski Fakultet')
+    embed.set_thumbnail(image1)
+
+    hook.send(embed=embed)
