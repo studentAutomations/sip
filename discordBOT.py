@@ -22,3 +22,21 @@ embed.set_footer(text='Elektronski Fakultet')
 embed.set_thumbnail(image1)
 
 hook.send(embed=embed)
+
+embed = {
+        "embeds": [{
+            "title": "Image Name",
+            "description": "Image Description",
+            "image": {
+                "url": "attachment:https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png"  # Use the filename here
+            }
+        }]
+    }
+
+    # Prepare the files to be sent
+    files = {
+        'file': (image_path, open(image_path, 'rb'), 'image/png')  # Adjust MIME type if needed
+    }
+
+    # Send the request
+    response = requests.post(url, data={'payload_json': json.dumps(embed)}, files=files)
