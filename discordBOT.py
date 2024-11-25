@@ -1,7 +1,7 @@
 import os
 from dhooks import Webhook, Embed, File
 
-# Get the webhook URL from environment variable
+
 WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
 
 for url in WEBHOOK_URL:
@@ -11,10 +11,10 @@ for url in WEBHOOK_URL:
     hook.send('**@everyone Nova obavestenja na SIP-u!**')
 
     
-    image2_path = 'sip-nova-obavestenja.png'  # Local path to the image
+    image2_path = 'sip-nova-obavestenja.png' 
 
     
-    # Send the embed and attach the image
+   
     hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'))
 
     hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
