@@ -34,7 +34,7 @@ try:
     # Set a larger window size (you can adjust these values as needed)
     # Here we set a fixed width that is larger than what might be needed.
     
-    page_to_scrape.set_window_size(width, height)  # Adding some extra space
+    page_to_scrape.set_window_size(1200, 150)  # Adding some extra space
 
     # Scroll to make sure the element is visible in case it's off-screen
     page_to_scrape.execute_script("arguments[0].scrollIntoView(true);", responseT)
