@@ -18,7 +18,6 @@ for url in WEBHOOK_URL:
     image2_path = 'sip-nova-obavestenja.png'  # Local path to the image
 
     embed.add_field(name='Idi na sajt - ', value='https://cs.elfak.ni.ac.rs/nastava/')
-    embed.add_field(name='Vidi obavestenja - ', value='Image attached below.')
     embed.set_footer(text='Elektronski Fakultet')
     embed.set_thumbnail(image1)
 
