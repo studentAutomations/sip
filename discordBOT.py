@@ -24,4 +24,4 @@ for url in WEBHOOK_URL:
 hook.send('**>>> Nova obavestenja na SIP-u!**')
 
 
-hook.send('**--------------------**')
+
