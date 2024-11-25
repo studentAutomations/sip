@@ -2,15 +2,11 @@ import os
 from dhooks import Webhook, Embed, File
 
 # Get the webhook URL from environment variable
-WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN')]
+WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
 
 for url in WEBHOOK_URL:
     hook = Webhook(url)
 
-    embed = Embed(
-        color=0x499957,
-        timestamp='now'
-    )
 
     hook.send('**@everyone Nova obavestenja na SIP-u!**')
 
