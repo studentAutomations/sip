@@ -17,7 +17,7 @@ for url in WEBHOOK_URL:
     # Send the embed and attach the image
     hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'))
 
-hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
+    hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
 
 
 
