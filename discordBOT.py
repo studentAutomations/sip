@@ -17,7 +17,11 @@ for url in WEBHOOK_URL:
     
     image2_path = 'sip-nova-obavestenja.png'  # Local path to the image
 
-    hook.send('**>>> Nova obavestenja na SIP-u!**')
-
+    
     # Send the embed and attach the image
     hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'))
+
+hook.send('**>>> Nova obavestenja na SIP-u!**')
+
+
+hook.send('**--------------------**')
