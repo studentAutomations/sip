@@ -6,8 +6,7 @@
 
 
  Уто, 26. Нов, 2024. у 9:32 
-JetBrains Tech Quiz na Elektronskom fakultetu
-
+  JetBrains Tech Quiz на Електронском факултету
 Компанија JetBrains  организоваће 5. децембра од 18.30 сати у амфитеатру А2 JetBrains Tech Quiz на Електронском факултету
 
 Опширније 
