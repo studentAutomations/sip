@@ -2,7 +2,7 @@ import os
 from discord import Webhook, RequestsWebhookAdapter, File
 
 
-WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
+WEBHOOK_URL = [os.getenv('proba')]
 
 for url in WEBHOOK_URL:
     hook = Webhook.from_url(url, adapter=RequestsWebhookAdapter())
