@@ -1,27 +1,17 @@
 import os
-from discord import Webhook, RequestsWebhookAdapter, File
+from dhooks import Webhook, Embed, File
 
 
-WEBHOOK_URL = [os.getenv('proba')]
+WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
+
 
 for url in WEBHOOK_URL:
-    hook = Webhook.from_url(url, adapter=RequestsWebhookAdapter())
+    hook = Webhook(url) 
 
+    hook.send('**@everyone Nova obavestenja na SIP-u!**')
+   
+    image2_path = 'cs-lp-nova-obavestenja.png' 
 
-    def send_message():
-    
-        message_content = '**@everyone Nova obavestenja na SIP-u!**\n\n**>>> https://sip.elfak.ni.ac.rs/**'
-        image_path = 'sip-nova-obavestenja.png'
+    hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'))
 
-    
-        hook.send(content=message_content)
-
-    
-        with open(image_path, 'rb') as image_file:
-        hook.send(file=File(image_file, name='sip-nova-obavestenja.png'))
-
-
-    send_message()
-
-
-
+    hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
