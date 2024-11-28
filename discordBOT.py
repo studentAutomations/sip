@@ -11,7 +11,7 @@ for url in WEBHOOK_URL:
     hook.send('**@everyone Nova obavestenja na SIP-u!**')
    
     # File path
-    image2_path = 'sip-nova-obavestenja.png' 
+    image2_path = 'https://github.com/studentAutomations/sip/blob/main/sip-nova-obavestenja.png' 
 
     # Send the image
     file = File(image2_path, name='sip-nova-obavestenja.png')
