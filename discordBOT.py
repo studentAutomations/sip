@@ -12,3 +12,5 @@ for url in WEBHOOK_URL:
     hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'))
 
     hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
+
+    os.remove("sip-nova-obavestenja.png")
