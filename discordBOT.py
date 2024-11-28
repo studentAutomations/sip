@@ -2,17 +2,20 @@ import os
 from dhooks import Webhook, Embed, File
 import time
 
+# Webhook URL setup
 WEBHOOK_URL = [os.getenv('PROBA')]
 for url in WEBHOOK_URL:
     hook = Webhook(url) 
 
+    # Notify users
     hook.send('**@everyone Nova obavestenja na SIP-u!**')
    
+    # File path
     image2_path = 'sip-nova-obavestenja.png' 
 
     # Send the image
-    with File(image2_path, name='sip-nova-obavestenja.png') as file:
-        hook.send(file=file)
+    file = File(image2_path, name='sip-nova-obavestenja.png')
+    hook.send(file=file)
 
     # Send the link
     hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
