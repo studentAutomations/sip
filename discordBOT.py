@@ -13,4 +13,5 @@ for url in WEBHOOK_URL:
 
     hook.send('**>>> https://sip.elfak.ni.ac.rs/**')
 
-    os.remove("sip-nova-obavestenja.png")
+    if os.path.exists("sip-nova-obavestenja.png"):
+        os.remove("sip-nova-obavestenja.png")
