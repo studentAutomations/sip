@@ -1,8 +1,6 @@
 name: sip scraper
 
-on: 
-  schedule:
-    - cron: '*/5 * * * *'
+on: [workflow_dispatch]
 
 jobs:
   build:
@@ -36,9 +34,6 @@ jobs:
           pip install -r requirements.txt
 
       - name: Run main script
-        env:
-          MAIL: ${{ secrets.MAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         run: python main.py
 
       - name: Commit changes
@@ -48,15 +43,11 @@ jobs:
         id: auto-commit-action      
 
       - name: Take photo
-        env:
-          MAIL: ${{ secrets.MAIL }}
-          PASSWORD: ${{ secrets.PASSWORD }}
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         run: python takephoto.py
 
       - name: Discord bot notification
         if: steps.auto-commit-action.outputs.changes_detected == 'true'
         env:
-          WEBHOOK_MAIN: ${{ secrets.WEBHOOK_MAIN }}
-          WEBHOOK_OTHER1: ${{ secrets.WEBHOOK_OTHER1 }}
+          PROBA: ${{ secrets.PROBA }}
         run: python discordBOT.py
