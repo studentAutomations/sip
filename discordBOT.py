@@ -7,8 +7,6 @@ WEBHOOK_URL = [os.getenv('PB')]
 for url in WEBHOOK_URL:
     hook = Webhook(url)
 
-    embed_color = next(color_cycle) 
-
     embed = Embed(
         description="**@everyone**\n\n>>> [**SIP link**](https://sip.elfak.ni.ac.rs/)",
         color=0x9b59b6
