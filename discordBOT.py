@@ -1,11 +1,7 @@
-from itertools import cycle
 import os
 from dhooks import Webhook, Embed, File
 
 image2_path = 'sip-nova-obavestenja.png'
-
-colors = [0x3498db, 0xe74c3c, 0x2ecc71, 0x9b59b6]
-color_cycle = cycle(colors)
 
 WEBHOOK_URL = [os.getenv('PB')]
 for url in WEBHOOK_URL:
@@ -15,7 +11,7 @@ for url in WEBHOOK_URL:
 
     embed = Embed(
         description="**@everyone**\n\n>>> [**SIP link**](https://sip.elfak.ni.ac.rs/)",
-        color=embed_color 
+        color=0x9b59b6
     )
     embed.set_image(url=f"attachment://{image2_path}")  
 
