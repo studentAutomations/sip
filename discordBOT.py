@@ -9,7 +9,7 @@ for url in WEBHOOK_URL:
 
     embed = Embed(
         description="**@everyone**\n\n>>> [**SIP link**](https://sip.elfak.ni.ac.rs/)",
-        color=0xE74C3C
+        color=0x2ECC71
     )
     embed.set_image(url=f"attachment://{image2_path}")  
 
