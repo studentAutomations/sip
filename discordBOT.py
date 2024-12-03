@@ -9,10 +9,9 @@ color_cycle = cycle(colors)
 
 WEBHOOK_URL = [os.getenv('PB')]
 for url in WEBHOOK_URL:
-    hook = Webhook(url) 
+    hook = Webhook(url)
 
-   embed_color = next(color_cycle)
-
+    embed_color = next(color_cycle) 
 
     embed = Embed(
         description="**@everyone**\n\n>>> [**SIP link**](https://cs.elfak.ni.ac.rs/nastava/)",
@@ -20,5 +19,4 @@ for url in WEBHOOK_URL:
     )
     embed.set_image(url=f"attachment://{image2_path}")  
 
-    
     hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'), embed=embed)
