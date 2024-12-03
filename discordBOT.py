@@ -21,8 +21,8 @@ for url in WEBHOOK_URL:
 
 
     embed = Embed(
-        description="**@everyone**\n\n>>> [**Idi na sajt (link).**](https://cs.elfak.ni.ac.rs/nastava/)",
-        color=0x3498db
+        description="[**https://cs.elfak.ni.ac.rs/nastava/**](https://cs.elfak.ni.ac.rs/nastava/)",
+        color=0xFFFF00 
     )
     embed.set_image(url=f"attachment://{image2_path}")  
 
