@@ -1,7 +1,11 @@
+import random
 import os
 from dhooks import Webhook, Embed, File
 
 image2_path = 'sip-nova-obavestenja.png'
+
+def random_color():
+    return random.randint(0, 0xFFFFFF)
 
 WEBHOOK_URL = [os.getenv('PB')]
 for url in WEBHOOK_URL:
@@ -17,8 +21,8 @@ for url in WEBHOOK_URL:
 
 
     embed = Embed(
-        description="**@everyone**\n\n>>> [Kliknite ovde za detalje.](https://cs.elfak.ni.ac.rs/nastava/)",
-        color=0x3498db
+        description="**@everyone**\n\n>>> [Idi na sajt (link).](https://cs.elfak.ni.ac.rs/nastava/)",
+        color=random_color()
     )
     embed.set_image(url=f"attachment://{image2_path}")  
 
