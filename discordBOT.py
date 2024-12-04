@@ -3,12 +3,13 @@ from dhooks import Webhook, Embed, File
 
 image2_path = 'sip-nova-obavestenja.png'
 
-WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
+#WEBHOOK_URL = [os.getenv('WEBHOOK_MAIN'), os.getenv('WEBHOOK_OTHER1')]
+WEBHOOK_URL = [os.getenv('PROJECTBOT')]
 for url in WEBHOOK_URL:
     hook = Webhook(url)
 
     embed = Embed(
-        description="**@everyone**\n\n>>> **[SIP link](https://sip.elfak.ni.ac.rs/)**",
+        description="**[SIP link](https://sip.elfak.ni.ac.rs/)**",
         color=0x3498DB
     )
     
