@@ -11,6 +11,7 @@ for url in WEBHOOK_URL:
         description="**@everyone**\n\n>>> **[SIP link](https://sip.elfak.ni.ac.rs/)**",
         color=0x3498DB
     )
-    embed.set_image(url=f"attachment://{image2_path}")  
-
-    hook.send(file=File(image2_path, name='sip-nova-obavestenja.png'), embed=embed)
+    
+    embed.set_image(url="attachment://sip-nova-obavestenja.png")
+    file = File(image2_path, name="sip-nova-obavestenja.png")
+    hook.send("**@everyone 📢 SIP**", embed=embed, file=file)
