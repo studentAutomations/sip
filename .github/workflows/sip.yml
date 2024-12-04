@@ -54,4 +54,5 @@ jobs:
         env:
           WEBHOOK_MAIN: ${{ secrets.WEBHOOK_MAIN }}
           WEBHOOK_OTHER1: ${{ secrets.WEBHOOK_OTHER1 }}
+          WEBHOOK_OTHER2: ${{ secrets.WEBHOOK_OTHER2 }}
         run: python discordBOT.py
