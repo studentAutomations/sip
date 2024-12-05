@@ -8,7 +8,7 @@ for url in WEBHOOK_URL:
     hook = Webhook(url)
 
     embed = Embed(
-        description="**[SIP link](https://sip.elfak.ni.ac.rs/)**",
+        description="**[SIP link - click here -](https://sip.elfak.ni.ac.rs/)**",
         color=0x3498DB
     )
     
