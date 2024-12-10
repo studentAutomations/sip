@@ -3,24 +3,31 @@ from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
 
+# Chrome options
 chrome_options = Options()
 chrome_options.add_argument("--headless")  
 chrome_options.add_argument("--no-sandbox")
 chrome_options.add_argument("--disable-dev-shm-usage")
-chrome_options.binary_location = "/usr/bin/google-chrome"  # Updated for GitHub runner
+chrome_options.binary_location = "/usr/bin/google-chrome"
 
-browser_driver = Service('/usr/bin/chromedriver')  # Updated for GitHub runner
+# Chrome driver setup
+browser_driver = Service('/usr/bin/chromedriver')
 
+# Start the browser
 page_to_scrape = webdriver.Chrome(service=browser_driver, options=chrome_options)
 
 try:
+    # Open the target page
     page_to_scrape.get("https://sip.elfak.ni.ac.rs/")
 
+    # Locate the element and extract text
     responseT = page_to_scrape.find_element(By.ID, "novosti")
-
     novosti_markdown = responseT.text
+
+    # Save text to a markdown file
     with open("novosti.md", "w") as novosti_file:
         novosti_file.write(novosti_markdown)
 
 finally:
+    # Close the browser
     page_to_scrape.quit()
