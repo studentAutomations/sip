@@ -21,10 +21,21 @@ try:
     page_to_scrape.get("https://sip.elfak.ni.ac.rs/")
 
     responseT = page_to_scrape.find_element(By.ID, 'novosti')
-    novosti_markdown = responseT.text
 
-    with open("novosti.md", "w") as novosti_file:
-        novosti_file.write(novosti_markdown)
+    height = responseT.size['height']
+    width = responseT.size['width']
+
+    
+    desired_width = max(width, 1200)  
+
+    desired_height = min(height, 1000)
+
+    page_to_scrape.set_window_size(desired_width, desired_height)  
+
+   
+    page_to_scrape.execute_script("arguments[0].scrollIntoView(true);", responseT)
+
+    responseT.screenshot('sip-nova-obavestenja.png')
 
 finally:
     # Close the browser
