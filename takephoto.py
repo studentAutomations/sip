@@ -2,8 +2,6 @@ from selenium import webdriver
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.common.by import By
 from selenium.webdriver.chrome.options import Options
-import time
-import os
 
 # Chrome options
 chrome_options = Options()
@@ -21,28 +19,6 @@ page_to_scrape = webdriver.Chrome(service=browser_driver, options=chrome_options
 try:
     # Step 1: Navigate to the page
     page_to_scrape.get("https://sip.elfak.ni.ac.rs/")
-    page_to_scrape.find_element(By.LINK_TEXT, "Log in").click()
-    time.sleep(2)
-
-    # Step 2: Log in via OpenID Connect
-    page_to_scrape.find_element(By.LINK_TEXT, "OpenID Connect").click()
-    time.sleep(2)
-
-    # Step 3: Input email
-    mail = page_to_scrape.find_element(By.ID, "i0116")
-    mail.send_keys(os.environ['MAIL'])  
-    page_to_scrape.find_element(By.ID, "idSIButton9").click()
-    time.sleep(2)
-
-    # Step 4: Input password
-    password = page_to_scrape.find_element(By.ID, "i0118")
-    password.send_keys(os.environ['PASSWORD'])  
-    page_to_scrape.find_element(By.ID, "idSIButton9").click()
-    time.sleep(2)
-
-    # Step 5: Click "No" on "Stay signed in" prompt
-    page_to_scrape.find_element(By.ID, "idBtn_Back").click()
-    time.sleep(2)
 
     responseT = page_to_scrape.find_element(By.ID, 'novosti')
     novosti_markdown = responseT.text
